@@ -1,30 +1,10 @@
-exports.company = (req, res, next) => {
+const Company = require('../models/company')
+
+exports.company = async (req, res, next) => {
+
+    const company =await Company.findOne()
+
     res.status(200).json({
-        data: [
-            {
-                id: 1,
-                name: 'UD trucks',
-                address:{
-                    province: 'Bangkok',
-                    postcode: 10570
-                }
-            },
-            {
-                id: 2,
-                name: 'King Power',
-                address:{
-                    province: 'Bangkok',
-                    postcode: 10110
-                }
-            },
-            {
-                id: 3,
-                name: 'agoda',
-                address:{
-                    province: 'Bangkok',
-                    postcode: 10330
-                }
-            }
-        ]
+        data: company
       })
 }
