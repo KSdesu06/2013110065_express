@@ -8,9 +8,14 @@ const schema = new Schema({
     shop: { type: Schema.Types.ObjectId, ref: 'Shop' },
 
 },{ 
-    timestamps: true,
+    toJSON: { virtuals: true },
+    timestamps: true,   //สร้าง createdAt and updatedAt
     collection: "menus" 
 });
+
+schema.virtual('price_vat').get(function(){
+    return (this.price * 0.07) + this.price
+})
 
 const menu = mongoose.model("Menu", schema)
 module.exports  = menu

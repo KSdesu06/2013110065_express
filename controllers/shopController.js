@@ -19,8 +19,18 @@ exports.shop = async (req, res, next) => {
 }
 
 exports.menu = async (req, res, next) => {
-    const menu =await Menu.find().sort({_id: -1});
+    //const menu =await Menu.find().select('+name -price')
+   // const menu =await Menu.find().where('price').gt(200) //gt greater than
+    const menu = await Menu.find().populate('menu')
     res.status(200).json({
         data: menu
+    }) 
+}
+
+
+exports.show = async (req, res, next) => {
+    const shop = await Shop.findById(req.params.id).populate('menu')
+    res.status(200).json({
+        data: shop
     }) 
 }
