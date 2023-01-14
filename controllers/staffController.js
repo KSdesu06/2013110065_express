@@ -1,8 +1,23 @@
 const Staff = require('../models/staff')
+const config = require('../config')
+const fs = require('fs');
+const path = require('path');
+const uuidv4 = require('uuid');
+const { promisify } = require('util')
+const writeFileAsync = promisify(fs.writeFile)
 
 //get all data
 exports.staff = async (req, res, next) => {
     const staff =await Staff.find().sort({_id: -1});
+    const staffWithPhotoDomain = staff.map((staff,index) => {
+        return {
+            id: staff._id,
+            name: staff.name,
+            photo: config.DOMAIN + staff.photo,
+            location: staff.location
+        }
+    }
+    )
     res.status(200).json({
         data: staff
     }) 
