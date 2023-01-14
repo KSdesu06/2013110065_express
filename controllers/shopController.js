@@ -43,7 +43,7 @@ exports.show = async (req, res, next) => {
 
 exports.insert = async (req, res, next) => {
 
-    const {name, salary} = req.body
+    const {name, location, photo} = req.body
 
     let shop = new Shop({
         name: name,
