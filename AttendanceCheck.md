@@ -1,1 +1,1 @@
-Kanlayanuch Srichote (Kat): Chapter 6 - Upload File Base64 and Google Storage Part.2.
+Kanlayanuch Srichote (Kat): Chapter 8 - Login with JSON Web Token & Passport.js
