@@ -65,6 +65,8 @@ exports.insert = async (req, res, next) => {
         res.status(200).json({
             message: 'เพิ่มร้านอาหารเรียบร้อย'
         })
+    } catch (error){
+        next(error);
     }
 }
 
