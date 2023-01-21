@@ -10,7 +10,7 @@ router.get('/:id', shopController.show);
 router.post('/',[
     body('name').not().isEmpty().withMessage("กรุณาป้อนชื่อสกุลด้วย"),
     body('location').not().isEmpty().withMessage("กรุณาป้อนตำแหน่งที่อยู่"),
-    body('photo').not().isEmpty().withMessage("กรุณาใส่รูปภาพ").isBase64("รูปภาพต้องแปลงเป็น base 64")
+    body('photo').not().isEmpty().withMessage("กรุณาใส่รูปภาพ")
 ], shopController.insert);
 
 
