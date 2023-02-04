@@ -103,3 +103,13 @@ exports.login  = async (req, res, next) => {
         next(error)
     }
 }
+
+//profile
+exports.profile = (req, res, next) => {
+    const { role, name, email } = req.user
+    res.status(200).json({
+        name: name,
+        email: email,
+        role: role,
+    })
+}
