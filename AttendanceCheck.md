@@ -1,1 +1,1 @@
-Kanlayanuch Srichote (Kat): Chapter 8 - Login with JSON Web Token & Passport.js
+Kanlayanuch Srichote (Kat): Chapter 9 - User Authentication
